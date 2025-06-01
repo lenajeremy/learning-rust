@@ -51,14 +51,46 @@ fn main() {
     //
     //
     // DEMONSTRATION 2 (PASSING AS FUNCTION PARAMETERS)
-    fn count_entities(list: Vec<i32>) -> usize {
-        list.len()
-    }
-    let v = vec![1, 2, 3, 4, 5, 6];
-    count_entities(v);
-    for value in v {
-        println!("{value}")
-    }
+    //fn count_entities(list: &mut Vec<i32>) -> usize {
+    //    list.push(6);
+    //    list.len()
+    //}
+    //let mut v = vec![1, 2, 3, 4, 5, 6];
+    //
+    //count_entities(&mut v);
+    //for value in v {
+    //    println!("{value}")
+    //}
 
     // That brings us to borrowing
+    //
+    slices();
+}
+
+fn _ascii_capitalize(v: &mut Vec<char>) {
+    let c = &v[0];
+    if c.is_ascii_lowercase() {
+        let up = c.to_ascii_uppercase();
+        v[0] = up;
+    } else {
+        println!("Already capitalized: {:?}", v);
+    }
+}
+
+fn slices() {
+    let mut arr = vec![1, 2, 3, 4, 5];
+    let mut arr_slice = &arr[0..=2];
+
+    println!("{:?}", arr);
+    println!("{:?}", arr);
+    println!("{:?}", arr);
+    println!("{:?}", arr_slice);
+
+    arr.pop();
+
+    let new_vec = vec![6, 7, 8, 9, 10];
+    arr_slice = &new_vec[..=2];
+    for num in arr_slice {
+        println!("{num}");
+    }
 }
