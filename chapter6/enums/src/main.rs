@@ -14,11 +14,6 @@ fn main() {
     println!("{x}");
 }
 
-enum Love {
-    Agape,
-    Platonic(String),
-}
-
 fn plus_one(x: Option<i32>) -> Option<i32> {
     match x {
         None => None,
