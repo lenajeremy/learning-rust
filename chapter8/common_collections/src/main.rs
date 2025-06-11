@@ -1,3 +1,5 @@
+use std::collections::{HashMap, hash_map::Entry};
+
 fn main() {
     println!("Chapter 8");
     // storing vectors
@@ -42,7 +44,24 @@ fn main() {
 
     s.push_str(&String::from(" Glorify Him!"));
 
-    //println!("{sl}");
-
     println!("{s}");
+
+    hashmaps();
+}
+
+fn hashmaps() {
+    let mut cache = HashMap::new();
+
+    cache.insert(3, String::from("Three"));
+    cache.insert(4, "four".to_string());
+
+    println!("{cache:?}");
+
+    for (key, value) in &cache {
+        println!("Key: {key}, Value: {value}");
+    }
+
+    let v = vec![4; 100];
+    let sum: usize = v.iter().sum();
+    println!("{sum}");
 }
