@@ -1,14 +1,50 @@
-use std::collections::{HashMap, hash_map::Entry};
+mod group_anagrams;
+
+use std::collections::HashMap;
 
 fn main() {
     println!("Chapter 8");
-    // storing vectors
-    //
-    let mut v = vec![5; 10];
-    println!("{v:#?}");
+    let s = group_anagrams::Solution {};
+    let groups = s.group_anagrams(vec![
+        String::from("tea"),
+        String::from("ate"),
+        String::from("eat"),
+        String::from("efe"),
+        String::from("fee"),
+        String::from("low"),
+        String::from("owl"),
+    ]);
 
-    v.push(5);
+    println!("{:?}", groups);
+    hashmaps();
+    strings();
+}
 
+fn hashmaps() {
+    let mut cache = HashMap::new();
+
+    cache.insert(3, String::from("Three"));
+    cache.insert(4, "four".to_string());
+
+    println!("{cache:?}");
+
+    for (key, value) in &cache {
+        println!("Key: {key}, Value: {value}");
+    }
+
+    let text = "hello world wonderful world";
+
+    let mut map = HashMap::new();
+
+    for word in text.split_whitespace() {
+        let count = map.entry(word).or_insert(0);
+        *count += 1;
+    }
+
+    println!("{map:?}");
+}
+
+fn strings() {
     let hello = String::from("السلام عليكم");
     println!("{hello}");
     let hello = String::from("Dobrý den");
@@ -40,28 +76,9 @@ fn main() {
     println!("{}", s.to_uppercase());
     println!("{s}");
 
-    println!("{sl}");
+    println!("{}", sl.to_uppercase());
 
-    s.push_str(&String::from(" Glorify Him!"));
+    s.push_str(&String::from("Glorify Him!"));
 
     println!("{s}");
-
-    hashmaps();
-}
-
-fn hashmaps() {
-    let mut cache = HashMap::new();
-
-    cache.insert(3, String::from("Three"));
-    cache.insert(4, "four".to_string());
-
-    println!("{cache:?}");
-
-    for (key, value) in &cache {
-        println!("Key: {key}, Value: {value}");
-    }
-
-    let v = vec![4; 100];
-    let sum: usize = v.iter().sum();
-    println!("{sum}");
 }
