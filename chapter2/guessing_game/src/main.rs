@@ -8,6 +8,8 @@ fn main() {
     let mut guesses: u8 = 0;
     // generate random number
     let secret_number = rand::rng().random_range(1..=100);
+    let x = "opppppp";
+    println!("{x}");
 
     loop {
         println!("Enter an integer");
@@ -35,4 +37,3 @@ fn main() {
         }
     }
 }
-

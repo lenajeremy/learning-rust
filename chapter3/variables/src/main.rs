@@ -6,6 +6,36 @@ use std::io;
 //}
 
 fn main() {
+    fib_interactive();
+    temp_converter();
+}
+
+fn fib_interactive() {
+    println!("Welcome to interactive fibonacci");
+
+    fn fib(n: usize) -> usize {
+        if n <= 1 {
+            return n;
+        }
+
+        let res = fib(n - 1) + fib(n - 2);
+        return res;
+    }
+
+    loop {
+        let mut n = String::new();
+        println!("\n\nEnter your number:");
+        io::stdin().read_line(&mut n).expect("Invalid number");
+
+        let n: usize = match n.trim().parse() {
+            Ok(n) => n,
+            Err(_) => continue,
+        };
+        println!("The {n}th fibonacci number is {}", fib(n));
+    }
+}
+
+fn temp_converter() {
     println!("Welcome to temperature converter\n\n");
 
     loop {

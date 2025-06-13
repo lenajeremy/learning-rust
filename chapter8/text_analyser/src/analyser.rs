@@ -8,9 +8,13 @@ pub struct Analysis {
 }
 
 impl Analysis {
-    fn get_top_k_words(k: usize) -> Vec<String> {
+    pub fn get_top_k_words(&self, k: usize) -> Vec<String> {
         println!("{}", k);
         vec![]
+    }
+
+    pub fn word_count(&self) -> usize {
+        self.word_count
     }
 }
 
