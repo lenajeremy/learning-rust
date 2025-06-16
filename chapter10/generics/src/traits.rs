@@ -1,4 +1,4 @@
-use std::{cmp, fmt::Display};
+use std::cmp;
 
 trait Skewable {
     fn skew(&mut self, angle: u8);
