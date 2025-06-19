@@ -113,6 +113,7 @@ To an admiring bog!";
             "you".to_string(),
         ];
         let expected_config = Config {
+            case_sensitive: true,
             file_path: "poem.txt".to_string(),
             query: "you".to_string(),
         };
