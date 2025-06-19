@@ -1,5 +1,15 @@
 pub mod new_module;
 
+/// Adds one to the number given.
+///
+/// # Examples
+///
+/// ```
+/// let arg = 5;
+/// let answer = adder::add(arg, 9);
+///
+/// assert_eq!(14, answer);
+/// ```
 pub fn add(left: u64, right: u64) -> u64 {
     println!("yoyoyoy {right}");
     left + right
@@ -40,3 +50,4 @@ mod sample {
         println!("yellowwww... i'm dancing");
     }
 }
+
