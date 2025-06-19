@@ -15,10 +15,33 @@ struct Inventory {
 }
 
 impl Inventory {
+    /// Adds one to the number given.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// let arg = 5;
+    /// let answer = my_crate::add_one(arg);
+    ///
+    /// assert_eq!(6, answer);
+    /// ```
     fn giveaway(&self, user_preference: Option<ShirtColor>) -> ShirtColor {
         user_preference.unwrap_or_else(|| self.most_stocked())
     }
 
+    /// Returns the most stocked shirt color
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// let inventory = Inventory {
+    ///     shirts: vec![ShirtColor::Red, ShirtColor::Blue, ShirtColor::Blue]
+    /// };
+    ///
+    /// let most_stocked = inventory.most_stocked();
+    ///
+    /// assert_eq!(most_stocked, ShirtColor::Blue);
+    /// ```
     fn most_stocked(&self) -> ShirtColor {
         let mut red_count = 0;
         let mut blue_count = 0;
