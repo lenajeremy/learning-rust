@@ -14,8 +14,8 @@ fn main() {
         },
     ];
 
-    let in_my_size = shoes_in_size(shoes.clone(), 10);
-    println!("{shoes:#?}");
+    let in_my_size = shoes_in_size(shoes, 10);
+    println!("{in_my_size:#?}");
 
     assert_eq!(
         in_my_size,
