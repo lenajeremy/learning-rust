@@ -9,7 +9,7 @@ fn main() {
         std::process::exit(1);
     };
 }
-fn test_lifetimes<'a>(v: &'a [String], s: &'a [String]) -> &'a [String] {
+fn _test_lifetimes<'a>(v: &'a [String], s: &'a [String]) -> &'a [String] {
     let mut new_slice = vec![];
 
     for word in v {
