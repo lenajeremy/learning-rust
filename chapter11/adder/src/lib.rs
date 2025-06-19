@@ -5,8 +5,9 @@ pub mod new_module;
 /// # Examples
 ///
 /// ```
+/// use adder::*;
 /// let arg = 5;
-/// let answer = adder::add(arg, 9);
+/// let answer = add(arg, 9);
 ///
 /// assert_eq!(14, answer);
 /// ```
